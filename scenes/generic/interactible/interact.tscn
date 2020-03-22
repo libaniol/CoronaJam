@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+custom_solver_bias = 1.0
+extents = Vector2( 16, 16 )
+
+[node name="interactible" type="MenuButton"]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 32 )
+hint_tooltip = "Right Button To Interact"
+items = [ "View", null, 0, false, false, 0, 0, null, "", false, "Move", null, 0, false, false, 1, 0, null, "", false, "Use", null, 0, false, false, 2, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"interactible",
+]]
+position = Vector2( 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )

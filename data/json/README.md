@@ -1,0 +1,3 @@
+####
+JSON FILES - MUST DEFINE STRUCTURE
+####

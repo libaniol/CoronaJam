@@ -1,0 +1,3 @@
+####
+MAIN CHARACTER GENERIC SCENE
+####

@@ -1,0 +1,6 @@
+{
+    "FlowerPot":{
+        "scene": "flower_pot/FlowerPot.tscn",
+        "size" : 1
+    }
+}

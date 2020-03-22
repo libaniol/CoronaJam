@@ -1,0 +1,3 @@
+####
+TEXTURES - MUST DEFINE STRUCTURE
+####
