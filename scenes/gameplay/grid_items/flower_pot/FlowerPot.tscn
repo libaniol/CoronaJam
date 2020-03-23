@@ -20,3 +20,5 @@ texture = ExtResource( 2 )
 hframes = 3
 
 [node name="interactible" parent="." instance=ExtResource( 1 )]
+button_mask = 2
+items = [ "View", null, 0, false, false, 0, 0, null, "", false, "Move", null, 0, false, false, 1, 0, null, "", false, "Use", null, 0, false, false, 2, 0, null, "", false ]

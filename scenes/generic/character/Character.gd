@@ -8,12 +8,13 @@ signal equip
 
 onready var feet : AnimatedSprite = $Feet/FeetSprite
 onready var body : AnimatedSprite = $Body/BodySprite
+onready var part : AnimatedSprite = $Part/PartSprite
 
 export var move_speed : float = 0.0
 var velocity : Vector2 = Vector2()
 
 var bag : PoolStringArray = [
-		"empty", 
+		"FlowerPot", 
 		"empty", 
 		"empty", 
 		"empty", 
@@ -25,7 +26,7 @@ var bag : PoolStringArray = [
 		"empty"
 ]
 var bag_qnt : PoolIntArray = [
-		0, 
+		9, 
 		0, 
 		0, 
 		0, 
@@ -77,6 +78,8 @@ func _process(_delta) -> void:
 		BodyStates.ATTACK:
 			equipment_input()
 			body.play("attack")
+			part.get_parent().show()
+			part.play("punch")
 			# warning-ignore:return_value_discarded
 			move_input_process()
 			continue
@@ -158,6 +161,10 @@ func move_input_process() -> bool:
 
 
 
+func get_hit():
+	$Animation.play("get_hit")
+
+
 func acquire_item(id : Node2D, cursor : Node2D):
 	var done : bool = false
 	for i in range(bag.size()):
@@ -188,7 +195,13 @@ func acquire_item(id : Node2D, cursor : Node2D):
 
 func _on_BodySprite_animation_finished():
 	if body.animation == "attack":
+		part.get_parent().hide()
+		part.play("default")
 		body_state = BodyStates.IDLE
+		if $FindHit.is_colliding():
+			var hit : Node2D = $FindHit.get_collider() as Node2D
+			if hit.is_in_group("enemy"):
+				hit.get_hit()
 
 
 
@@ -204,3 +217,9 @@ func _on_Cursor_use(cursor : Node2D):
 		bag[current_item] = "empty"
 		current_item = -1
 		emit_signal("equip", -1)
+
+
+
+func _on_Animation_animation_finished(anim_name):
+	if anim_name == "get_hit":
+		$Animation.play("default")

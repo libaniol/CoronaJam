@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scenes/generic/character/textures/feet/survival_character_legs.png" type="Texture" id=1]
 [ext_resource path="res://scenes/generic/character/textures/torso/survival_character_torso.png" type="Texture" id=2]
 [ext_resource path="res://scenes/generic/character/textures/attack/survival_character_attack.png" type="Texture" id=3]
+[ext_resource path="res://scenes/generic/character/textures/attack/part/survival_animation_punch.png" type="Texture" id=4]
 [ext_resource path="res://scenes/generic/character/Character.gd" type="Script" id=191]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -46,64 +47,64 @@ atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 3 )
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
@@ -112,18 +113,102 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": true,
-"name": "walk",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "attack",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "walk",
+"speed": 15.0
 } ]
 
-[node name="Character" type="KinematicBody2D"]
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=30]
+resource_name = "default"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Feet/FeetSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/BodySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "get_hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Feet/FeetSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.870588, 0.0588235, 0.0588235, 1 ), Color( 1, 1, 1, 1 ), Color( 0.870588, 0.0588235, 0.0588235, 1 ), Color( 1, 1, 1, 1 ), Color( 0.870588, 0.0588235, 0.0588235, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/BodySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.870588, 0.0588235, 0.0588235, 1 ), Color( 1, 1, 1, 1 ), Color( 0.870588, 0.0588235, 0.0588235, 1 ), Color( 1, 1, 1, 1 ), Color( 0.870588, 0.0588235, 0.0588235, 1 ) ]
+}
+
+[node name="Character" type="KinematicBody2D" groups=[
+"player",
+]]
+collision_mask = 7
 script = ExtResource( 191 )
 move_speed = 100.0
 
@@ -146,7 +231,27 @@ frames = SubResource( 24 )
 animation = "idle"
 playing = true
 
+[node name="Part" type="Node2D" parent="."]
+visible = false
+position = Vector2( 16, 0 )
+rotation = 1.5708
+scale = Vector2( 0.6, 0.6 )
+
+[node name="PartSprite" type="AnimatedSprite" parent="Part"]
+frames = SubResource( 28 )
+animation = "punch"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/default = SubResource( 30 )
+anims/get_hit = SubResource( 29 )
+
+[node name="FindHit" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 16, 0 )
+collision_mask = 2
 [connection signal="animation_finished" from="Body/BodySprite" to="." method="_on_BodySprite_animation_finished"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
