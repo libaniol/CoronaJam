@@ -4,14 +4,15 @@
 custom_solver_bias = 1.0
 extents = Vector2( 16, 16 )
 
-[node name="interactible" type="MenuButton"]
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
+[node name="interactible" type="TextureButton"]
+anchor_left = -0.025
+anchor_top = -0.044
+anchor_right = 0.025
+anchor_bottom = 0.044
+margin_top = -0.159999
+margin_right = -640.0
+margin_bottom = -359.84
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Right Button To Interact"
-items = [ "View", null, 0, false, false, 0, 0, null, "", false, "Move", null, 0, false, false, 1, 0, null, "", false, "Use", null, 0, false, false, 2, 0, null, "", false ]
 __meta__ = {
 "_edit_use_anchors_": false
 }

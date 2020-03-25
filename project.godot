@@ -8,14 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://scenes/generic/character/Character.gd"
+}, {
+"base": "Node2D",
+"class": "GridItem",
+"language": "GDScript",
+"path": "res://scenes/gameplay/grid_items/grid_item.gd"
+} ]
 _global_script_class_icons={
-
+"Character": "",
+"GridItem": ""
 }
 
 [application]
 
 config/name="CoronaJam"
+run/main_scene="res://scenes/_tests/test.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -75,7 +87,7 @@ move_rt={
 }
 attack={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 unequip={

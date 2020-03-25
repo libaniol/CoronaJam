@@ -1,6 +1,6 @@
 extends TileMap
 
-signal take
+signal pressed
 
-func take_item(item : Node2D):
-	emit_signal("take", item)
+func _on_item_pressed(item : Node2D):
+	emit_signal("pressed", item)

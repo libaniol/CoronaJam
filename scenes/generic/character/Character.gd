@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Character
+
 signal acquire
 signal add
 signal use
@@ -14,7 +16,7 @@ export var move_speed : float = 0.0
 var velocity : Vector2 = Vector2()
 
 var bag : PoolStringArray = [
-		"FlowerPot", 
+		"empty", 
 		"empty", 
 		"empty", 
 		"empty", 
@@ -26,7 +28,7 @@ var bag : PoolStringArray = [
 		"empty"
 ]
 var bag_qnt : PoolIntArray = [
-		9, 
+		0, 
 		0, 
 		0, 
 		0, 
@@ -165,31 +167,30 @@ func get_hit():
 	$Animation.play("get_hit")
 
 
-func acquire_item(id : Node2D, cursor : Node2D):
-	var done : bool = false
-	for i in range(bag.size()):
-		if bag[i] == id.id:
-			if bag_qnt[i] < bag_limit:
-				bag_qnt[i] += 1
-				done = true
-				emit_signal("acquire", i, bag_qnt[i])
-				id.queue_free()
-				cursor.take_item_process(id)
-				break
-	
-	if not done:
+func acquire_item(id : Node2D):
+	for _q in range(id.qtd):
+		var done : bool = false
 		for i in range(bag.size()):
-			if bag[i] == "empty":
-				bag[i] = id.id
-				bag_qnt[i] = 1
-				done = true
-				emit_signal("add", i, bag_qnt[i], id.id)
-				id.queue_free()
-				cursor.take_item_process(id)
-				break
-	
-	if not done:
-		print("bag full")
+			if bag[i] == id.id:
+				if bag_qnt[i] < bag_limit:
+					bag_qnt[i] += 1
+					done = true
+					emit_signal("acquire", i, bag_qnt[i])
+					id.remove()
+					break
+		
+		if not done:
+			for i in range(bag.size()):
+				if bag[i] == "empty":
+					bag[i] = id.id
+					bag_qnt[i] = 1
+					done = true
+					emit_signal("add", i, bag_qnt[i], id.id)
+					id.remove()
+					break
+		
+		if not done:
+			print("bag full")
 
 
 
@@ -223,3 +224,18 @@ func _on_Cursor_use(cursor : Node2D):
 func _on_Animation_animation_finished(anim_name):
 	if anim_name == "get_hit":
 		$Animation.play("default")
+
+
+
+func get_item_qtd(id : String) -> int:
+	var index = []
+	for i in bag.size():
+		if bag[i] == id:
+			index.append(i)
+	if index.size() > 0:
+		var ret : int = 0
+		for i in index:
+			ret += i
+		return ret
+	else:
+		return 0

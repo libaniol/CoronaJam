@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/generic/item_menu/item_menu.gd" type="Script" id=1]
+
+[node name="gui" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="gui" type="MarginContainer" parent="."]
+margin_right = 148.0
+margin_bottom = 190.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ui" type="Control" parent="gui"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 138.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 128, 180 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="VBoxContainer" parent="gui/ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inspect" type="Button" parent="gui/ui/menu"]
+margin_top = 27.0
+margin_right = 128.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 128, 32 )
+action_mode = 0
+text = "Inspect"
+
+[node name="Use" type="Button" parent="gui/ui/menu"]
+margin_top = 74.0
+margin_right = 128.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 128, 32 )
+action_mode = 0
+text = "Use"
+
+[node name="Collect" type="Button" parent="gui/ui/menu"]
+margin_top = 121.0
+margin_right = 128.0
+margin_bottom = 153.0
+rect_min_size = Vector2( 128, 32 )
+action_mode = 0
+text = "Collect"
+[connection signal="pressed" from="gui/ui/menu/Inspect" to="." method="_on_Inspect_pressed"]
+[connection signal="pressed" from="gui/ui/menu/Use" to="." method="_on_Use_pressed"]
+[connection signal="pressed" from="gui/ui/menu/Collect" to="." method="_on_Collect_pressed"]

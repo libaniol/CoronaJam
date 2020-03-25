@@ -7,10 +7,17 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
 
-[node name="FlowerPot" type="Node2D"]
+[node name="FlowerPot" type="Node2D" groups=[
+"pot",
+]]
 script = ExtResource( 3 )
+id = "FlowerPot"
+inspect = true
+collect = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[
+"pot",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 1 )
@@ -20,5 +27,7 @@ texture = ExtResource( 2 )
 hframes = 3
 
 [node name="interactible" parent="." instance=ExtResource( 1 )]
-button_mask = 2
-items = [ "View", null, 0, false, false, 0, 0, null, "", false, "Move", null, 0, false, false, 1, 0, null, "", false, "Use", null, 0, false, false, 2, 0, null, "", false ]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0

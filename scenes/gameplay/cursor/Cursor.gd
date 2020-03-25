@@ -8,7 +8,8 @@ enum CursorStates {
 	NONE,
 	CROSS,
 	INTERACT,
-	PLACE
+	PLACE,
+	GUI
 }
 
 onready var sprite : AnimatedSprite = $AnimatedSprite
@@ -38,6 +39,7 @@ func _process(_delta):
 		CursorStates.INTERACT:
 			sprite.play("interact")
 		CursorStates.PLACE:
+			sprite.play("default")
 			if Input.is_action_just_pressed("attack"):
 				emit_signal("use", self)
 		CursorStates.NONE:
@@ -45,8 +47,8 @@ func _process(_delta):
 
 
 
-func take_item(item : Node2D):
-	emit_signal("take_item", item, self)
+func collect_item(item : Node2D):
+	emit_signal("take_item", item)
 
 
 
@@ -76,26 +78,20 @@ func use_item_process(id : String, character):
 	var path : String = "res://scenes/gameplay/grid_items/" + items[id].scene
 	var item : PackedScene = load(path)
 	
-	var coord : Vector2 = grid.world_to_map(position)
+	var coord : Vector2 = grid.world_to_map(global_position)
 	
 	var cell : int = grid.get_cellv(coord)
 	
-	if cell < 0:
+	if cell <= items[id].type:
 		var pos : Vector2 = grid.map_to_world(coord) + Vector2(16.0, 16.0)
 		
 		var instance : Node2D = item.instance()
-		instance.position = pos
-		
+		instance.global_position = pos
+		instance.coord = coord
+
 		grid.add_child(instance)
-		grid.set_cellv(coord, 0)
+		grid.set_cellv(coord, grid.get_cellv(coord) + 1)
 		character.bag_qnt[character.current_item] -= 1
-
-
-
-func take_item_process(item : Node2D):
-	var coord : Vector2 = grid.world_to_map(item.position)
-	
-	grid.set_cellv(coord, -1)
 
 
 
@@ -109,3 +105,12 @@ func load_json():
 	if data_parse.error != OK:
 		return
 	items = data_parse.result
+
+
+
+func _on_World_toggle_menu():
+	if state == CursorStates.GUI:
+		state = CursorStates.NONE
+	else:
+		state = CursorStates.GUI
+	pass

@@ -4,9 +4,10 @@
 [ext_resource path="res://scenes/gameplay/world/World.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/gameplay/cursor/Cursor.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/generic/bag/Bag.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/generic/entities/enemy_sack/EnemySack.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/_tests/test.gd" type="Script" id=5]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="World" parent="." instance=ExtResource( 2 )]
 
@@ -17,11 +18,8 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Bag" parent="CanvasLayer" instance=ExtResource( 4 )]
-
-[node name="EnemySack" parent="." instance=ExtResource( 5 )]
-position = Vector2( 84.9518, -56.6485 )
-move_speed = 80.0
-[connection signal="take" from="World" to="Cursor" method="take_item"]
+[connection signal="collect" from="World" to="Cursor" method="collect_item"]
+[connection signal="toggle_menu" from="World" to="Cursor" method="_on_World_toggle_menu"]
 [connection signal="acquire" from="Character" to="CanvasLayer/Bag" method="_on_Character_acquire"]
 [connection signal="add" from="Character" to="CanvasLayer/Bag" method="_on_Character_add"]
 [connection signal="equip" from="Character" to="Cursor" method="equip_item"]

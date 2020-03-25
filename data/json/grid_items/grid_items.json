@@ -2,12 +2,18 @@
     "FlowerPot":{
         "scene": "flower_pot/FlowerPot.tscn",
         "size" : 1,
-        "type" : 1
+        "type" : -1
     },
 
     "Potato":{
         "scene": "potato/Potato.tscn",
         "size" : 1,
         "type" : 0
+    },
+
+    "CraftTable":{
+        "scene": "craft_table/CraftTable.tscn",
+        "size" : 1,
+        "type" : -1
     }
 }
