@@ -1,0 +1,53 @@
+{
+    "FlowerPot":{
+        "icon": "survival_icon_vase_full.png"
+    },
+    "Potato":{
+        "icon": "survival_icon_potato.png"
+    },
+    "CraftTable":{
+        "icon": "survival_icon_workbench.png"
+    },
+    "Bandage":{
+        "icon": "survival_icon_bandage.png"
+    },
+    "Cloth":{
+        "icon": "survival_icon_cloth.png"
+    },
+    "Crate":{
+        "icon": "survival_icon_crate.png"
+    },
+    "Crossbow":{
+        "icon": "survival_icon_crossbow.png"
+    },
+    "DogHouse":{
+        "icon": "survival_icon_doghouse.png"
+    },
+    "Hatchet":{
+        "icon": "survival_icon_hatchet.png"
+    },
+    "Knife":{
+        "icon": "survival_icon_knife.png"
+    },
+    "Metal":{
+        "icon": "survival_icon_metal.png"
+    },
+    "PoisonPotato":{
+        "icon": "survival_icon_poisonpotato.png"
+    },
+    "Scrap":{
+        "icon": "survival_icon_scrap.png"
+    },
+    "Sofa":{
+        "icon": "survival_icon_sofa.png"
+    },
+    "Stick":{
+        "icon": "survival_icon_stick.png"
+    },
+    "Stove":{
+        "icon": "survival_icon_stove.png"
+    },
+    "Strand":{
+        "icon": "survival_icon_strand.png"
+    }
+}

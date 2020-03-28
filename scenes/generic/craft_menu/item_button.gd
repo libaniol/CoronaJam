@@ -7,14 +7,15 @@ export var material_1 : String = "none"
 export var material_2 : String = "none"
 export var material_3 : String = "none"
 
-export var material_1_qtd : int = 0
-export var material_2_qtd : int = 0
-export var material_3_qtd : int = 0
+export var material_1_qtd : int = 10
+export var material_2_qtd : int = 10
+export var material_3_qtd : int = 10
 
 
 
 func _ready():
-	connect("pressed", self, "_on_pressed")
+	if connect("pressed", self, "_on_pressed") != OK:
+		get_tree().quit()
 
 
 

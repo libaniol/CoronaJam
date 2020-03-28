@@ -48,6 +48,8 @@ func _on_gui_destroyed():
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		$gui/gui.hide()
-		item = null
+		if menu_active:
+			$gui.queue_free()
+			item = null
+			menu_active = false
 	pass

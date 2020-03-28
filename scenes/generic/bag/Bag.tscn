@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/generic/bag/Bag.gd" type="Script" id=1]
+[ext_resource path="res://resources/styles/frames/survival_ui_9cellframe.png" type="Texture" id=2]
 
 [node name="Bag" type="Control"]
 anchor_top = 1.0
@@ -27,10 +28,20 @@ __meta__ = {
 }
 
 [node name="item_00" type="TextureButton" parent="HBoxContainer"]
-margin_left = 106.0
-margin_right = 138.0
+self_modulate = Color( 0.0470588, 0.490196, 0.847059, 1 )
+margin_left = 216.0
+margin_right = 248.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/item_00"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nmb" type="Label" parent="HBoxContainer/item_00"]
 anchor_right = 0.5
@@ -61,16 +72,24 @@ __meta__ = {
 }
 
 [node name="item_01" type="TextureButton" parent="HBoxContainer"]
-margin_left = 150.0
-margin_right = 182.0
+self_modulate = Color( 0.0470588, 0.490196, 0.847059, 1 )
+margin_left = 260.0
+margin_right = 292.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/item_01"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nmb" type="Label" parent="HBoxContainer/item_01"]
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
 rect_min_size = Vector2( 16, 16 )
 text = "2"
 align = 1
@@ -95,10 +114,20 @@ __meta__ = {
 }
 
 [node name="item_02" type="TextureButton" parent="HBoxContainer"]
-margin_left = 194.0
-margin_right = 226.0
+self_modulate = Color( 0.0470588, 0.490196, 0.847059, 1 )
+margin_left = 304.0
+margin_right = 336.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/item_02"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nmb" type="Label" parent="HBoxContainer/item_02"]
 anchor_right = 0.5
@@ -129,10 +158,20 @@ __meta__ = {
 }
 
 [node name="item_03" type="TextureButton" parent="HBoxContainer"]
-margin_left = 238.0
-margin_right = 270.0
+self_modulate = Color( 0.0470588, 0.490196, 0.847059, 1 )
+margin_left = 348.0
+margin_right = 380.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/item_03"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nmb" type="Label" parent="HBoxContainer/item_03"]
 anchor_right = 0.5
@@ -163,10 +202,20 @@ __meta__ = {
 }
 
 [node name="item_04" type="TextureButton" parent="HBoxContainer"]
-margin_left = 282.0
-margin_right = 314.0
+self_modulate = Color( 0.0470588, 0.490196, 0.847059, 1 )
+margin_left = 392.0
+margin_right = 424.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
+texture_normal = ExtResource( 2 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/item_04"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="nmb" type="Label" parent="HBoxContainer/item_04"]
 anchor_right = 0.5
@@ -183,176 +232,6 @@ __meta__ = {
 }
 
 [node name="qnt" type="Label" parent="HBoxContainer/item_04"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 16, 16 )
-text = "00"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="item_05" type="TextureButton" parent="HBoxContainer"]
-margin_left = 326.0
-margin_right = 358.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-
-[node name="nmb" type="Label" parent="HBoxContainer/item_05"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
-rect_min_size = Vector2( 16, 16 )
-text = "6"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="qnt" type="Label" parent="HBoxContainer/item_05"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 16, 16 )
-text = "00"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="item_06" type="TextureButton" parent="HBoxContainer"]
-margin_left = 370.0
-margin_right = 402.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-
-[node name="nmb" type="Label" parent="HBoxContainer/item_06"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
-rect_min_size = Vector2( 16, 16 )
-text = "7"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="qnt" type="Label" parent="HBoxContainer/item_06"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 16, 16 )
-text = "00"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="item_07" type="TextureButton" parent="HBoxContainer"]
-margin_left = 414.0
-margin_right = 446.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-
-[node name="nmb" type="Label" parent="HBoxContainer/item_07"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
-rect_min_size = Vector2( 16, 16 )
-text = "8"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="qnt" type="Label" parent="HBoxContainer/item_07"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 16, 16 )
-text = "00"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="item_08" type="TextureButton" parent="HBoxContainer"]
-margin_left = 458.0
-margin_right = 490.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-
-[node name="nmb" type="Label" parent="HBoxContainer/item_08"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
-rect_min_size = Vector2( 16, 16 )
-text = "9"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="qnt" type="Label" parent="HBoxContainer/item_08"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 16, 16 )
-text = "00"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="item_09" type="TextureButton" parent="HBoxContainer"]
-margin_left = 502.0
-margin_right = 534.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-
-[node name="nmb" type="Label" parent="HBoxContainer/item_09"]
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_top = 0.323547
-margin_bottom = 0.323547
-rect_min_size = Vector2( 16, 16 )
-text = "0"
-align = 1
-valign = 1
-clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="qnt" type="Label" parent="HBoxContainer/item_09"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 1.0

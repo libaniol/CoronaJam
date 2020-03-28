@@ -20,19 +20,9 @@ var bag : PoolStringArray = [
 		"empty", 
 		"empty", 
 		"empty", 
-		"empty", 
-		"empty", 
-		"empty", 
-		"empty", 
-		"empty", 
 		"empty"
 ]
 var bag_qnt : PoolIntArray = [
-		0, 
-		0, 
-		0, 
-		0, 
-		0, 
 		0, 
 		0, 
 		0, 
@@ -114,16 +104,6 @@ func equipment_input():
 		emit_equip(3)
 	if Input.is_key_pressed(KEY_5):
 		emit_equip(4)
-	if Input.is_key_pressed(KEY_6):
-		emit_equip(5)
-	if Input.is_key_pressed(KEY_7):
-		emit_equip(6)
-	if Input.is_key_pressed(KEY_8):
-		emit_equip(7)
-	if Input.is_key_pressed(KEY_9):
-		emit_equip(8)
-	if Input.is_key_pressed(KEY_0):
-		emit_equip(9)
 
 
 
@@ -172,7 +152,7 @@ func acquire_item(id : Node2D):
 		var done : bool = false
 		for i in range(bag.size()):
 			if bag[i] == id.id:
-				if bag_qnt[i] < bag_limit:
+				if bag_qnt[i] < id.max_capacity:
 					bag_qnt[i] += 1
 					done = true
 					emit_signal("acquire", i, bag_qnt[i])
@@ -235,7 +215,7 @@ func get_item_qtd(id : String) -> int:
 	if index.size() > 0:
 		var ret : int = 0
 		for i in index:
-			ret += i
+			ret += bag_qnt[i]
 		return ret
 	else:
 		return 0

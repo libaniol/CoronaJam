@@ -18,9 +18,10 @@ func _on_Area2D_body_entered(body : Node2D):
 func _on_Cicle_timeout():
 	if cicle < 5:
 		cicle += 1
-		if cicle == 4:
+		if cicle == 5:
 			qtd = 3
 			$Cicle.start($Cicle.wait_time * 2)
+			$interactible.disabled = false
 		$Sprite.frame = cicle
 	else:
 		queue_free()

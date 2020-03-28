@@ -6,6 +6,7 @@ signal pressed
 
 export var id : String = "none"
 export var qtd : int = 1
+export var max_capacity : int = 10
 export(String, MULTILINE) var inspect_text : String
 export var inspect : bool
 export var use : bool

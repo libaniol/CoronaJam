@@ -15,5 +15,75 @@
         "scene": "craft_table/CraftTable.tscn",
         "size" : 1,
         "type" : -1
+    },
+    "Bandage":{
+        "scene": "bandage/Bandage.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "Cloth":{
+        "scene": "cloth/Cloth.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "Crate":{
+        "scene": "crate/Crate.tscn",
+        "size" : 1,
+        "type" : -1
+    },
+    "Crossbow":{
+        "scene": "crossbow/Crossbow.tscn",
+        "size" : 1,
+        "type" : -2
+    },
+    "DogHouse":{
+        "scene": "dog_house/DogHouse.tscn",
+        "size" : 1,
+        "type" : -1
+    },
+    "Hatchet":{
+        "scene": "hatchet/Hatchet.tscn",
+        "size" : 1,
+        "type" : -2
+    },
+    "Knife":{
+        "scene": "knife/Knife.tscn",
+        "size" : 1,
+        "type" : -2
+    },
+    "Metal":{
+        "scene": "metal/Metal.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "PoisonPotato":{
+        "scene": "poison_potato/PoisonPotato.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "Scrap":{
+        "scene": "scrap/Scrap.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "Sofa":{
+        "scene": "sofa/Sofa.tscn",
+        "size" : 1,
+        "type" : -1
+    },
+    "Stick":{
+        "scene": "stick/Stick.tscn",
+        "size" : 1,
+        "type" : 0
+    },
+    "Stove":{
+        "scene": "stove/Stove.tscn",
+        "size" : 1,
+        "type" : -1
+    },
+    "Strand":{
+        "scene": "strand/Strand.tscn",
+        "size" : 1,
+        "type" : 0
     }
 }

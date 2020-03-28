@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/tilesets/ground.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/gameplay/world/World.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/gameplay/world/grid.gd" type="Script" id=4]
 [ext_resource path="res://scenes/gameplay/grid_items/potato/Potato.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gameplay/grid_items/craft_table/CraftTable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/gameplay/grid_items/stove/Stove.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
@@ -38,4 +39,7 @@ position = Vector2( -71.3547, -26.1805 )
 
 [node name="CraftTable" parent="grid" instance=ExtResource( 6 )]
 position = Vector2( 104.704, 101.461 )
+
+[node name="Stove" parent="grid" instance=ExtResource( 7 )]
+position = Vector2( -113.217, 121.362 )
 [connection signal="pressed" from="grid" to="." method="_on_grid_pressed"]

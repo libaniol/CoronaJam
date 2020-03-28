@@ -16,6 +16,7 @@ script = ExtResource( 5 )
 [node name="Cursor" parent="." instance=ExtResource( 3 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="Bag" parent="CanvasLayer" instance=ExtResource( 4 )]
 [connection signal="collect" from="World" to="Cursor" method="collect_item"]
